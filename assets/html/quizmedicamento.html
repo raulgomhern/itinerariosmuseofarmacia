@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test del ciclo del medicamento</title>
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/raulgomhern/itinerariosmuseofarmacia/refs/heads/main/assets/img/favicon.png">
+  <link rel="stylesheet" href="../css/style-quizmedicamento.css" />
+</head>
+<body>
+  <div class="quiz-wrapper">       
+    <div id="questionBox" class="question">Pregunta</div>
+
+    <!-- Contenedor para mensajes -->
+    <div id="messageBox" class="message"></div>
+
+    <div class="options">
+      <ul id="ul">
+        <li id="opt1" onclick="button(this)"></li>
+        <li id="opt2" onclick="button(this)"></li>
+        <li id="opt3" onclick="button(this)"></li>
+        <li id="opt4" onclick="button(this)"></li>
+      </ul>
+    </div>
+
+    <div class="score">
+      <div class="next">
+        <button id="btnNext" type="button" onclick="next()">Siguiente</button>
+      </div>
+      <div class="score-card">
+        Puntuación: <span id="scoreCard">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/scriptquizmedicamento.js"></script>
+</body>
+</html>
