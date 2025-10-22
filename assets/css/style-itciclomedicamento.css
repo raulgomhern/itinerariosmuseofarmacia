@@ -1,0 +1,243 @@
+:root {
+  --bar-h: 75px;
+  --banner-url: url('https://raw.githubusercontent.com/raulgomhern/itinerariosmuseofarmacia/refs/heads/main/assets/img/ejeprof2.png');
+  --bg-brand: #c2864d;
+  --bg-left: #c2864d;
+  --text: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-brand);
+  color: var(--text);
+  font-family: "Garamond", Garamond, "EB Garamond", "Adobe Garamond Pro", serif;
+  font-size: 1.2rem;
+}
+
+/* Banner superior fijo */
+.scroll-banner-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bar-h);
+  overflow: hidden;
+  z-index: 9999;
+  background: var(--bg-brand);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  pointer-events: none;
+}
+
+/* Relleno que revela la imagen de izq→der sin zoom */
+.scroll-banner-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%; /* controlado por JS con rAF */
+  background-image: var(--banner-url);
+  background-repeat: no-repeat;
+  background-position: left center; /* anclado a la izquierda */
+  background-size: cover;           /* ocupa el alto y recorta a lo ancho */
+  /* sin transition; el suavizado lo hace JS */
+}
+
+/* Línea separadora */
+.hairline {
+  position: fixed;
+  top: var(--bar-h);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  z-index: 9998;
+}
+
+/* Layout principal */
+.scrolly {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  padding-top: calc(var(--bar-h) + 1px);
+  background: var(--bg-brand);
+}
+
+/* Sticky panel derecha */
+.figure-sticky {
+  grid-column: 2 / 3;
+  position: sticky;
+  top: var(--bar-h);
+  height: calc(100vh - var(--bar-h));
+  margin: 0;
+  overflow: visible;
+  border-color: black ;
+}
+.figure-sticky img{
+  display:block;
+  margin: 0 auto;
+  width: auto;           /* no forzar ancho */
+  height: auto;          /* mantener proporción */
+  max-width: 100%;       /* permite reducir si el contenedor es más estrecho */
+  max-height: 100%;      /* idem para alto */
+  object-fit: contain;   /* que quepa completa sin recorte */
+  transform: none;       /* sin escalados */
+  zoom: 1;               /* valor normal (propiedad no estándar) */
+}
+
+
+.figure-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.45s;
+}
+.figure-layer.on { opacity: 1; }
+
+/* Historia */
+.story {
+  grid-column: 1 / 2;
+  padding: 0rem 1rem 3rem;
+  background: var(--bg-left);
+  color: #fff;
+}
+
+.chapter {
+  max-width: 100vh;
+  margin: 0 auto 20vh;
+  font-size: 1rem;
+  padding: 6vh;
+}
+
+.step {
+  margin: 30vh 0;
+  padding: 2rem;
+  transform: translateY(10px);
+  transition: opacity 280ms ease, transform 280ms ease;
+  text-align: justify;
+  color:black;
+  background-color: rgb(254, 222, 161);
+
+}
+.step.is-active { opacity: 1; transform: translateY(0); }
+.step.is-past { opacity: 0.7; transform: translateY(-6px); }
+
+.creditos {
+  background-color: white;
+  color:black;
+  margin-top: 1rem;
+  padding: 2rem;
+  text-align: justify;
+}
+
+.creditos h4{
+  color: black;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.agradecimientos{
+  background-color: white;
+  color:black;
+  margin-top: 1rem;
+  padding: 2rem;
+  text-align: justify;
+}
+
+.agradecimientos h4{
+  color: black;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.logos img {
+  margin-top: -2rem;
+  max-width: 30%;
+  height: auto;
+  display: block;
+  padding: 1rem;
+}
+
+.play{
+  background-color: white;
+  color:black;
+  padding: 2rem;
+  text-align: justify;
+}
+
+.playbuttons{
+  margin-top:-5rem;
+   background-color:white;
+   padding: 2rem;
+}
+
+.quizmedicamento-btn {
+text-decoration: none;
+ display: block;      /* Cada enlace ocupa su propia línea */
+  margin: 50px auto;   /* Separación vertical y centrado horizontal */
+  padding: 0.6rem 1.25rem;
+  font-size: 1.2rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quizmedicamento-btn:hover {
+   background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.itdirectprof-btn {
+  text-decoration: none;
+ display: block;      /* Cada enlace ocupa su propia línea */
+  margin: 50px auto;   /* Separación vertical y centrado horizontal */
+  padding: 0.6rem 1.25rem;
+  font-size: 1.2rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.itdirectprof-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.intro-btn {
+  text-decoration: none;
+ display: block;      /* Cada enlace ocupa su propia línea */
+  margin: 50px auto;   /* Separación vertical y centrado horizontal */
+  padding: 0.6rem 1.25rem;
+  font-size: 1.2rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figure-layer, .step, .scroll-banner-fill { transition: none; }
+}

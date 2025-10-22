@@ -1,0 +1,134 @@
+body {
+  background-color: #c2864d;
+  margin: 0;
+  padding: 7rem;
+  font-family: "Garamond", Garamond, "EB Garamond", "Adobe Garamond Pro", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.quiz-wrapper {
+  height: auto;
+  width: 600px;
+  background-color: white;
+  margin: 30px auto;
+  border-radius: 8px;
+  padding: 25px;
+  opacity: 0;
+  transform: scale(0.98);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.message {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  min-height: 24px;
+}
+
+.quiz-wrapper .question {
+  min-height: 50px;
+  background-color: #ec930d;
+  border-radius: 8px;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+}
+
+.quiz-wrapper .options ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.quiz-wrapper .options ul li {
+  background-color: grey;
+  width: 46%;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  color: white;
+  box-shadow: 0px 3px 0px grey;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.quiz-wrapper .options ul li:hover {
+  transform: scale(1.03);
+}
+
+.quiz-wrapper .options ul li.correct {
+  background-color: green;
+}
+
+.quiz-wrapper .options ul li.wrong {
+  background-color: red;
+}
+
+.quiz-wrapper .score {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-wrapper .score .next button {
+  padding: 10px 70px;
+  color: white;
+  background-color: #ec930d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quiz-wrapper .score .next button:hover {
+  background-color: #ffad33;
+}
+
+.quiz-wrapper .score .score-card {
+  font-size: 20px;
+}
+
+.quiz-wrapper .score .score-card span {
+  background-color: rgb(12, 88, 29);
+  padding: 5px 20px;
+  color: white;
+  border-radius: 8px;
+}
+
+.quiz-wrapper .final-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.quiz-wrapper .final-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: teal;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quiz-wrapper .final-buttons button:hover {
+  background-color: #0e8a8a;
+}

@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://raw.githubusercontent.com/raulgomhern/itinerariosmuseofarmacia/refs/heads/main/assets/img/inicio.png'); 
+  background-size: cover;
+  background-position: center;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.transparent-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transparent-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
