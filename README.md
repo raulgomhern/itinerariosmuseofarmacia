@@ -6,7 +6,7 @@ Itinerarios del Museo de Farmacia Hispana is a digital educational resource to h
 
 <br/>
 
-<img src="assets/img/2Bc.JPG" width="200%" height="200%">
+<img src="assets/img/2Bco.JPG" width="200%" height="200%">
 
 ## License
 
